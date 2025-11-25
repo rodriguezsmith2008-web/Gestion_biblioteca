@@ -25,11 +25,11 @@ public class main {
 
         do {
             System.out.println("\n---SISTEMA DE BIBLIOTECA --");
-            System.out.println("1. Gestión de Libros");
-            System.out.println("2. Gestion de Socios");
-            System.out.println("3. Prestamos y Devoluciones");
-            System.out.println("4. Gestión de Autores");
-            System.out.println("0. Salir");
+            System.out.println("1.Gestión de Libros");
+            System.out.println("2.Gestion de Socios");
+            System.out.println("3.Prestamos y Devoluciones");
+            System.out.println("4.Gestion de aautores");
+            System.out.println("0.Salir");
             System.out.print("Seleccione opción: ");
             opcionM = scanner.nextInt();
             scanner.nextLine();
@@ -39,27 +39,27 @@ public class main {
                 case 1:
                     int opcionLibro;
                     do {
-                        System.out.println("\n--- GESTIÓN DE LIBROS ---");
-                        System.out.println("1. Añadir libro");
-                        System.out.println("2. Buscar por ISBN");
-                        System.out.println("3. Buscar por título");
-                        System.out.println("4. Listar libros");
-                        System.out.println("5. Modificar libro");
-                        System.out.println("6. Eliminar libro");
-                        System.out.println("0. Volver");
+                        System.out.println("\n--- GESTION DE LIBROS ---");
+                        System.out.println("1.Añadir libro");
+                        System.out.println("2.Buscar por ISBN");
+                        System.out.println("3.Buscar por título");
+                        System.out.println("4.Listar libros");
+                        System.out.println("5.Modificar libro");
+                        System.out.println("6.Eliminar libro");
+                        System.out.println("0.Volver");
                         System.out.print("Seleccione la opcion que quieres: ");
                         opcionLibro = scanner.nextInt();
                         scanner.nextLine();
 
                         switch (opcionLibro) {
                             case 1:
-                                System.out.print("ISBN: ");
+                                System.out.print("ISBN ");
                                 String isbn = scanner.nextLine();
-                                System.out.print("Título: ");
+                                System.out.print("Título ");
                                 String titulo = scanner.nextLine();
-                                System.out.print("Año publicado: ");
+                                System.out.print("Año publicado ");
                                 int ano = scanner.nextInt();
-                                System.out.print("Cantidad total: ");
+                                System.out.print("Cantidad total ");
                                 int total = scanner.nextInt();
                                 scanner.nextLine();
 
@@ -69,15 +69,15 @@ public class main {
 
                                 switch (respuesta) {
                                     case 1:
-                                        System.out.print("ID del autor: ");
+                                        System.out.print("ID del autor ");
                                         autorId = scanner.nextInt();
                                         scanner.nextLine();
                                         break;
                                     default:
                                         scanner.nextLine();
-                                        System.out.print("Nombre autor: ");
+                                        System.out.print("Nombre autor ");
                                         String nombre = scanner.nextLine();
-                                        System.out.print("Nacionalidad: ");
+                                        System.out.print("Nacionalid ");
                                         String nacionalidad = scanner.nextLine();
                                         autorId = repoautor.RegistrarAutor(new autor(0, nombre, nacionalidad));
                                 }
@@ -87,7 +87,7 @@ public class main {
                                 break;
 
                             case 2:
-                                System.out.print("Ingrese isbn: ");
+                                System.out.print("Ingrese isbn ");
                                 String Isbn = scanner.nextLine();
                                 libro libro = repolibro.BuscarLibro(Isbn);
                                 switch (libro != null ? 1 : 0) {
@@ -101,7 +101,7 @@ public class main {
                                 break;
 
                             case 3:
-                                System.out.print("Ingrese título: ");
+                                System.out.print("Ingrese título ");
                                 String titulo2 = scanner.nextLine();
                                 libro libro2 = repolibro.BuscarLibro2(titulo2);
                                 switch (libro2 != null ? 1 : 0) {
@@ -109,15 +109,15 @@ public class main {
                                         System.out.println(libro2);
                                         break;
                                     case 0:
-                                        System.out.println("No encontrado.");
+                                        System.out.println("No encontrado");
                                         break;
                                 }
                                 break;
 
                             case 4:
                                 List<libro> lista = repolibro.ListarLibro();
-                                for (libro act : lista)
-                                    System.out.println(act);
+                                for (libro list : lista)
+                                    System.out.println(list);
                                 break;
 
                             case 5:
@@ -126,30 +126,26 @@ public class main {
                                 libro modificado = repolibro.BuscarLibro(isbn);
                                 switch (modificado != null ? 1 : 0) {
                                     case 1:
-                                        System.out.print("Nuevo título: ");
+                                        System.out.print("Nuevo título ");
                                         modificado.setTitulo(scanner.nextLine());
-                                        System.out.print("Nuevo id de autor: ");
+                                        System.out.print("Nuevo id de autor ");
                                         modificado.setautor_id(scanner.nextInt());
-                                        System.out.print("Nuevo año: ");
+                                        System.out.print("Nuevo añ");
                                         modificado.setano_publicado(scanner.nextInt());
-                                        System.out.print("Nueva cantidad total: ");
+                                        System.out.print("Nueva cantidad total ");
                                         modificado.setcantidad_total(scanner.nextInt());
-                                        System.out.print("Nueva cantidad disponible: ");
+                                        System.out.print("Nueva cantidad disponibl");
                                         modificado.setcantidad_disponible(scanner.nextInt());
                                         scanner.nextLine();
-                                        if (repolibro.actualizarLibro(modificado))
+                                        repolibro.actualizarLibro(modificado);
                                             System.out.println("Libro actualizado.");
-                                        else
-                                            System.out.println("Error al actualizar.");
-                                        break;
-                                    case 0:
-                                        System.out.println("Libro no encontrado.");
+
                                         break;
                                 }
                                 break;
 
                             case 6:
-                                System.out.print("ISBN a eliminar: ");
+                                System.out.print("ISBN a eliminar ");
                                 isbn = scanner.nextLine();
                                 repolibro.eliminar(isbn);
                                 System.out.println("Eliminación exitosa");
@@ -168,14 +164,14 @@ public class main {
                 case 2:
                     int opcionSocio;
                     do {
-                        System.out.println("\n--- GESTIÓN DE SOCIOS ---");
+                        System.out.println("\n--- GESTIoN DE SOCIOS ---");
                         System.out.println("1. Registrar socio");
                         System.out.println("2. Buscar por DNI");
                         System.out.println("3. Listar socios");
                         System.out.println("4. Modificar socio");
                         System.out.println("5. Eliminar socio");
                         System.out.println("0. Volver");
-                        System.out.print("Seleccione: ");
+                        System.out.print("Seleccione tu opcion ");
                         opcionSocio = scanner.nextInt();
                         scanner.nextLine();
 
@@ -269,7 +265,7 @@ public class main {
                         System.out.println("1. Registrar préstamo");
                         System.out.println("2. Devolver libro");
                         System.out.println("3. Listar prestamos activos");
-                        System.out.println("4. Listar prestamos por socio");
+                        System.out.println("4. Listar prestamos por sociov");
                         System.out.println("5. Ver libros prestados actualmente");
                         System.out.println("0. Volver");
                         System.out.print("Seleccione la opcion: ");
@@ -385,14 +381,14 @@ public class main {
                                 }
                                 break;
                             case 4:
-                                System.out.print("ID del autor a modificar: ");
+                                System.out.print("ID del autor a modificar ");
                                 int id = scanner.nextInt();
                                 scanner.nextLine();
                                 autor autorModificar = repoautor.BuscarAutor(id);
                                 if (autorModificar != null) {
-                                    System.out.print("Nuevo nombre: ");
+                                    System.out.print("Nuevo nombre ");
                                     autorModificar.setnombre(scanner.nextLine());
-                                    System.out.print("Nueva nacionalidad: ");
+                                    System.out.print("Nueva nacionalidad ");
                                     autorModificar.setNacionalidad(scanner.nextLine());
                                     repoautor.actualizar(autorModificar);
                                     System.out.println("Autor modificado");

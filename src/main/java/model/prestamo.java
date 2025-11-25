@@ -57,13 +57,7 @@ public class prestamo {
 
     @Override
     public String toString() {
-        return "ID: " + id +
-                " | Libro: " + libro_id +
-                " | Socio ID: " + socio_id +
-                " | Fecha préstamo: " + fechaPrestamo +
-                " | Fecha devolución prevista: " + fechaDevolucionPrevista +
-                " | Fecha devolución real: " + fechaDevolucionReal +
-                " | Estado: " + estado;
+        return "ID: " + id +" \n Libro: " + libro_id +"  \nSocio ID: " + socio_id +" \nFecha préstamo: " + fechaPrestamo +"\n Fecha devolución prevista: " + fechaDevolucionPrevista +  " \nFecha devolución real: " + fechaDevolucionReal + "\n Estado: " + estado;
     }
 
 }

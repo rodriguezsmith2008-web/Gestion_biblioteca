@@ -58,10 +58,10 @@ public class Socio {
     @Override
     public String toString() {
         return "ID: " + id +
-                " | Nombre: " + nombre +
-                " | Apellido: " + apellido +
-                " | DNI: " + dni +
-                " | Teléfono: " + telefono;
+                " \n Nombre: " + nombre +
+                "  \n Apellido: " + apellido +
+                "  \n DNI: " + dni +
+                "  \n Teléfono: " + telefono;
     }
 
 }

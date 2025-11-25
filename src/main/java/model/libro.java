@@ -69,11 +69,11 @@ public class libro {
     @Override
     public String toString() {
         return "ISBN: " + isbn +
-                " | Título: " + titulo +
-                " | Autor ID: " + autor_id +
-                " | Año: " + ano_publicado +
-                " | Total: " + cantidad_total +
-                " | Disponible: " + cantidad_disponible;
+                "\n  Título: " + titulo +
+                " \n Autor ID: " + autor_id +
+                " \n Año: " + ano_publicado +
+                "  \n mTotal: " + cantidad_total +
+                " \n Disponible: " + cantidad_disponible;
     }
 
 }
